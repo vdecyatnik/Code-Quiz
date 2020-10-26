@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+p {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.button, div {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: center;
+}
+
+.bdiv{
+
+    
+    padding-top:25px;
+}
