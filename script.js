@@ -25,6 +25,28 @@ let questions = [
     answArray: ["San Diego", "London", "Chicago", "New York"]
   }
 ]
+//create unordered list
+var list = document.createElement("ul");
+//create list items
+console.log(list);
+var listItemOne = document.createElement("li");
+console.log(listItemOne);
+var button = document.createElement("button");
+console.log(button);
+var listItemTwo = document.createElement("li");
+console.log(listItemTwo);
+var listItemThree = document.createElement("li");
+console.log(listItemThree);
+
+
+
+
+
+list.textContent = ("What color is the grass?")
+listItemOne.textContent = ("Blue");
+listItemTwo.textContent = ("Pink");
+listItemThree.textContent = ("Green");
+var btnA = document.createElement("button");
 
 
 
@@ -68,4 +90,3 @@ let questions = [
     //Question text
     //list of question answers-subarray
     //Correct Answer /index exact value etc,.
-    

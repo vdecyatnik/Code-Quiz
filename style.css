@@ -5,27 +5,24 @@
     font-family: inherit;
 }
 
-h1 {
-    font-size: 25px;
+
+
+h1{
+
     text-align: center;
-    padding-top: 50px;
+    padding-top:50px;
 }
 
-p {
-    text-align: center;
-    padding-top: 25px;
-}
+p{
 
-.startButtonClass, div {
-    text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
-    align-items: center;
-}
-
-.bdiv{
-
-    
+    text-align:center;
     padding-top:25px;
 }
 
+.sButton{
+    text-align:center;
+    padding:15px 15px;
+    margin-left:550px;
+    margin-top:15px;
+
+}
