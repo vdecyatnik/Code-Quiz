@@ -1,23 +1,23 @@
 let questions = [
   question1 = {
     ques: "Where is Valentina from?",
-    correctAnsw: "Seattle",
-    answArray: ["Seattle", "Chicago", "New York"]
+    correctAnsw: "0",
+    answArray: ["Seattle", "Chicago", "New York","California"]
 
   },
   question2 = {
     ques: "What's Valentina's favorite animal?",
-    correctAnsw: "Dog",
+    correctAnsw: "0",
     answArray: ["Dog", "Cat", "Fish", "Turtle"]
   },
   question3 = {
     ques: "What is Valentina's favorite color?",
-    correctAnsw: "Black",
+    correctAnsw: "3",
     answArray: ["Red", "Purple", "Blue", "Black"]
   },
   question4 = {
     ques: "What is Valentina's favorite food?",
-    correctAnsw: "Pizza",
+    correctAnsw: "2",
     answArray: ["Soup", "Burgers", "Pizza", "Cereal"]
   }
 
@@ -49,17 +49,43 @@ console.log(buttonD);
 //timer
 
 
-document.getElementById("startButton").addEventListener("click", setInterval);
+
+var countdown;
+
+var seconds;
 
 
-var seconds = document.getElementById("timer").textContent=("2:00");
-var countdown = setInterval(function(){
-  seconds--;
+document.getElementById("startButton").addEventListener("click", startGame)
+function startGame() {
+  seconds = 120;
+
+  document.getElementById("timer").textContent = (seconds);
+  countdown = setInterval(function () {
 
 
-//document.getElementById("timer").textContent = seconds;
-if (seconds < 0) clearInterval(countdown);
-}, 90000);
+    seconds--;
+
+
+    document.getElementById("timer").textContent = seconds;
+    if (seconds < 0) endGame();
+
+  }, 900);
+
+
+}
+
+
+
+
+
+
+function endGame(){
+  clearInterval(countdown);
+
+
+}
+
+
 
 
 
@@ -163,5 +189,4 @@ buttonD.textContent = ("D");
     //var high Score=[];
     //get the currently saved high scores out of local store localStore.get
     //localStore.getItem("highScore");
-    //if(storedhighscores && highScores= )else highScores=[];
-    //saving arrays to local storage stringify JSON.parse JSON.stringify when saving back into local storage
+    // if(storedhighscores && highScores= )else highscores
