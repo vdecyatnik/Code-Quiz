@@ -1,52 +1,84 @@
 let questions = [
   question1 = {
     ques: "Where is Valentina from?",
-    correctAnsw: "Chicago",
-    answArray: ["San Diego", "London", "Chicago", "New York"]
+    correctAnsw: "Seattle",
+    answArray: ["Seattle", "Chicago", "New York"]
+
   },
   question2 = {
-    ques: "Where is Valentina from?",
-    correctAnsw: "Chicago",
-    answArray: ["San Diego", "London", "Chicago", "New York"]
+    ques: "What's Valentina's favorite animal?",
+    correctAnsw: "Dog",
+    answArray: ["Dog", "Cat", "Fish", "Turtle"]
   },
   question3 = {
-    ques: "Where is Valentina from?",
-    correctAnsw: "Chicago",
-    answArray: ["San Diego", "London", "Chicago", "New York"]
+    ques: "What is Valentina's favorite color?",
+    correctAnsw: "Black",
+    answArray: ["Red", "Purple", "Blue", "Black"]
   },
   question4 = {
-    ques: "Where is Valentina from?",
-    correctAnsw: "Chicago",
-    answArray: ["San Diego", "London", "Chicago", "New York"]
-  },
-  question5 = {
-    ques: "Where is Valentina from?",
-    correctAnsw: "Chicago",
-    answArray: ["San Diego", "London", "Chicago", "New York"]
+    ques: "What is Valentina's favorite food?",
+    correctAnsw: "Pizza",
+    answArray: ["Soup", "Burgers", "Pizza", "Cereal"]
   }
+
 ]
-//create unordered list
+
+// document.getElementById("startButton").addEventListener("click", beginGame)
+//create unordered list for QP 1
 var list = document.createElement("ul");
 //create list items
 console.log(list);
 var listItemOne = document.createElement("li");
 console.log(listItemOne);
-var button = document.createElement("button");
-console.log(button);
+var buttonA = document.createElement("buttonA");
+console.log(buttonA);
 var listItemTwo = document.createElement("li");
 console.log(listItemTwo);
+var buttonB = document.createElement("buttonB")
+console.log(buttonB);
 var listItemThree = document.createElement("li");
 console.log(listItemThree);
+var buttonC = document.createElement("buttonC");
+console.log(buttonC);
+var listItemFour = document.createElement("li");
+console.log(listItemFour);
+var buttonD = document.createElement("buttonD");
+console.log(buttonD);
+
+
+//timer
+
+
+document.getElementById("startButton").addEventListener("click", setInterval);
+
+
+var seconds = document.getElementById("timer").textContent=("2:00");
+var countdown = setInterval(function(){
+  seconds--;
+
+
+//document.getElementById("timer").textContent = seconds;
+if (seconds < 0) clearInterval(countdown);
+}, 90000);
 
 
 
 
 
-list.textContent = ("What color is the grass?")
-listItemOne.textContent = ("Blue");
-listItemTwo.textContent = ("Pink");
-listItemThree.textContent = ("Green");
-var btnA = document.createElement("button");
+
+
+
+
+
+
+
+//Quiz Page 1 Content
+
+var answerButtons = document.createElement("button");
+buttonA.textContent = ("A");
+buttonB.textContent = ("B");
+buttonC.textContent = ("C");
+buttonD.textContent = ("D");
 
 
 
@@ -90,3 +122,46 @@ var btnA = document.createElement("button");
     //Question text
     //list of question answers-subarray
     //Correct Answer /index exact value etc,.
+
+
+
+    //WHEN I answer a question
+    //when user clicks an answer button
+    //THEN i am presented with anotehr question
+    //how to move from question to question--> var pointer/index of questions
+    //need to increase pointer by one. clear out previous question 
+
+    //div
+    //nav bar
+    //new div id question
+    //present the question = create new HTML elements for my question content 
+    //set the question divs innerhtml to =""; (clear out div)
+    //append a h2 for the question title
+    //append a new button for each choice -- var button = document.createElement('button'); button text.content = (questionText)
+    //push or add questions in html and then hide and append with javascript .question display:none
+    //.question.acive {display:block}
+    //WHEN i answer  a question incorrectly   var clickbuttonContent=event.target.textContent; --> if value of correct button matches the correct answer event.target
+    //values u can add and then remove
+    //use data attribute button.setAttribute("data-answer", questionText);
+    //event.getAttribute
+    //the question is orrect when the clickButtonValue =question[0].answer
+    //event.target.matches('button');
+    //subtract time from clock and points from current score
+    //WHEN all questions are answered 
+    //THEN need a results div with initislas score and hidden by default last page
+    //clear out current question or hide question element
+    //can add hidden classes display none
+    //Submit button
+    //show results form for getting user initials click event for submition of scores
+    //clear timeout
+    //var interval
+    //set interval 
+    //type text id get value of initials input 
+    //append new high score to list
+    //create new list and get value of input append object with intials and score
+    //store our list of highscores in local store
+    //var high Score=[];
+    //get the currently saved high scores out of local store localStore.get
+    //localStore.getItem("highScore");
+    //if(storedhighscores && highScores= )else highScores=[];
+    //saving arrays to local storage stringify JSON.parse JSON.stringify when saving back into local storage

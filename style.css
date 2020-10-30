@@ -5,24 +5,35 @@
     font-family: inherit;
 }
 
+body {
+    background-color: lightblue;
+}
 
-
-h1{
-
+h1 {
     text-align: center;
-    padding-top:50px;
+    padding-top: 50px;
 }
 
-p{
-
-    text-align:center;
-    padding-top:25px;
+p {
+    text-align: center;
+    padding-top: 25px;
 }
 
-.sButton{
-    text-align:center;
-    padding:15px 15px;
-    margin-left:550px;
-    margin-top:15px;
+ button{
+    text-align: center;
+    padding: 15px 15px;
+    border: 2px solid blue;
+   
 
+ }
+
+ .bDiv{
+     display:flex;
+     justify-content:center;
+     padding-top:10px;
+ }
+
+
+h4{
+    font-size:30px;
 }
