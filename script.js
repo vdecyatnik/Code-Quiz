@@ -1,62 +1,66 @@
-let questions = [
+var questions = [
   question1 = {
     ques: "Where is Valentina from?",
-    correctAnsw: "0",
-    answArray: ["Seattle", "Chicago", "New York","California"]
+    correctAnsw: "Seattle",
+    answArray: ["Seattle", "Chicago", "New York", "California"]
 
   },
   question2 = {
     ques: "What's Valentina's favorite animal?",
-    correctAnsw: "0",
+    correctAnsw: "Dog",
     answArray: ["Dog", "Cat", "Fish", "Turtle"]
   },
   question3 = {
     ques: "What is Valentina's favorite color?",
-    correctAnsw: "3",
+    correctAnsw: "Black",
     answArray: ["Red", "Purple", "Blue", "Black"]
   },
   question4 = {
     ques: "What is Valentina's favorite food?",
-    correctAnsw: "2",
+    correctAnsw: "Pizza",
     answArray: ["Soup", "Burgers", "Pizza", "Cereal"]
   }
 
 ]
 
-// document.getElementById("startButton").addEventListener("click", beginGame)
+
+
+
+
+
+
+
 //create unordered list for QP 1
 var list = document.createElement("ul");
 //create list items
 console.log(list);
 var listItemOne = document.createElement("li");
 console.log(listItemOne);
-var buttonA = document.createElement("buttonA");
-console.log(buttonA);
+// var buttonA = document.createElement("buttonA");
+// console.log(buttonA);
 var listItemTwo = document.createElement("li");
 console.log(listItemTwo);
-var buttonB = document.createElement("buttonB")
-console.log(buttonB);
+// var buttonB = document.createElement("buttonB")
+// console.log(buttonB);
 var listItemThree = document.createElement("li");
 console.log(listItemThree);
-var buttonC = document.createElement("buttonC");
-console.log(buttonC);
+// var buttonC = document.createElement("buttonC");
+// console.log(buttonC);
 var listItemFour = document.createElement("li");
 console.log(listItemFour);
-var buttonD = document.createElement("buttonD");
-console.log(buttonD);
+// var buttonD = document.createElement("buttonD");
+// console.log(buttonD);
 
 
 //timer
-
-
-
 var countdown;
-
 var seconds;
 
 
 document.getElementById("startButton").addEventListener("click", startGame)
 function startGame() {
+
+
   seconds = 120;
 
   document.getElementById("timer").textContent = (seconds);
@@ -72,14 +76,53 @@ function startGame() {
   }, 900);
 
 
+
 }
 
 
+var firstPage = document.getElementById("questions");
+
+var answButtons = document.getElementById("list1");
 
 
 
 
-function endGame(){
+var index;
+
+
+
+
+//document.getElementByID("list1").addEventListener("click", questionList)
+
+//function questionList(event) {
+//if user clicks on the textContent that matches correct answer in array then add a point and move to next question.
+//if (event.target.matches("button")) {
+//var button = event.target.textContent
+//if (textContent==="Seattle") {
+//questionIndex++;
+//}
+//else{
+//seconds--;
+//}
+
+
+
+
+//}
+
+
+
+
+//}
+
+
+
+
+
+
+
+
+function endGame() {
   clearInterval(countdown);
 
 
@@ -100,11 +143,27 @@ function endGame(){
 
 //Quiz Page 1 Content
 
-var answerButtons = document.createElement("button");
-buttonA.textContent = ("A");
-buttonB.textContent = ("B");
-buttonC.textContent = ("C");
-buttonD.textContent = ("D");
+// var answerButtons = document.createElement("button");
+// buttonA.textContent = ("A");
+// buttonB.textContent = ("B");
+// buttonC.textContent = ("C");
+// buttonD.textContent = ("D");
+
+// buttonA.setAttribute("style", "background-color: purple;, color:white");
+// buttonB.setAttribute("style", "background-color: purple;, color:white");
+// buttonC.setAttribute("style", "background-color: purple;, color:white");
+// buttonD.setAttribute("style", "background-color: purple;, color:white");
+
+
+
+
+
+
+
+
+
+
+
 
 
 

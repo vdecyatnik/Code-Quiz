@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: lightblue;
+    background-color: white;
 }
 
 h1 {
@@ -19,21 +19,40 @@ p {
     padding-top: 25px;
 }
 
- button{
+button {
     text-align: center;
     padding: 15px 15px;
-    border: 2px solid blue;
+    border: 2px solid white;
+    background-color: purple;
+    color: white;
+}
+
+.bDiv {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+#questions {
+    height: 90px;
+    width: 300px;
+    border: solid 2px black;
+}
+
+#list1 {
+    height: 210px;
+    width: 300px;
+    border: solid 2px black;
+}
+
+.answerB {
+    display: flex;
+    width: 80px;
+    flex-direction: column;
+    display:none;
    
-
- }
-
- .bDiv{
-     display:flex;
-     justify-content:center;
-     padding-top:10px;
- }
-
-
-h4{
-    font-size:30px;
 }
