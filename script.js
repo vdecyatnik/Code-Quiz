@@ -1,37 +1,28 @@
 var questions = [
   question1 = {
-    ques: "Where is Valentina from?\n(a) Seattle\n(b) Chicago\n(c)New York\n (d) California",
-    answer:"a"
+    ques: "Where is Valentina from? ",
+    answer: "0",
+    answrArray: ["Seattle", "Chicago", "Denver", "New York"]
 
   },
   question2 = {
-    ques: "What's Valentina's favorite animal?\n (a) Dog\n (b)Cat\n(c)Fish\n(d)Turtle",
-   answer:"a"
+    ques: "What's Valentina's favorite animal?",
+    answer: "1",
+    answrArray: ["Cat", "Dog", "Turtle", "Fish"],
   },
   question3 = {
-    ques: "What is Valentina's favorite color?\n(a)red\n(b)yellow\n(c)black\n(d)purple",
-    answer: "c"
-  
+    ques: "What is Valentina's favorite color?",
+    answer: "2",
+    answrArray: ["Purple", "Red", "Black", "Yellow"]
   },
   question4 = {
-    ques: "What is Valentina's favorite food?\n(a)burgers\n(b)carrots\n(c)eggs\n(d)cereal",
-    answer:"b"
+    ques: "What is Valentina's favorite food?",
+    answer: "3",
+    answrArray: ["Carrots", "Cheese", "Steak", "Pizza"]
   }
 
 ]
 
-
-var score=0;
-
-
-for (var i=0; i <questions.length;i++){
-  console.log(questions[i]);
-
-
-  if(questions.answer==="true"){
-    score ++;
-  }
-}
 
 
 
@@ -43,57 +34,16 @@ var seconds;
 document.getElementById("startButton").addEventListener("click", startGame)
 function startGame() {
 
-  seconds = 120;
-  document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
+seconds = 120;
+document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
 startButton.classList.add("hide")
 
-    seconds--;
-    document.getElementById("timer").textContent = seconds;
-    if (seconds < 0) endGame();
+seconds--;
+document.getElementById("timer").textContent = seconds;
+if (seconds < 0) endGame();
 
-  }, 900);
+}, 900);
 }
-
-
-
-
-
-//create unordered list for QP 1
-var list = document.createElement("ul");
-//create list items
-console.log(list);
-var listItemOne = document.createElement("button");
-document.body.appendChild(listItemOne);
-listItemOne.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
-
-console.log(listItemOne);
-var listItemTwo = document.createElement("button");
-document.body.appendChild(listItemTwo);
-listItemTwo.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
-
-console.log(listItemTwo);
-var listItemThree = document.createElement("button");
-
-document.body.appendChild(listItemThree);
-console.log(listItemThree);
-listItemThree.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
-var listItemFour = document.createElement("button");
-document.body.appendChild(listItemFour);
-console.log(listItemFour);
-listItemFour.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
-
-listItemOne.textContent="";
-listItemTwo.textContent="";
-listItemThree.textContent="";
-listItemFour.textContent="";
-
-
-
-
-
-
-
-
 
 
 
@@ -102,16 +52,42 @@ listItemFour.textContent="";
 
 var index;
 
+for (var i = 0; i< questions.length; i++) {
+  console.log(questions[i]);
+
+
+  if (questions.answer === "true") {
+    score++;
+  }
+}
 
 
 
-//document.getElementByID("list1").addEventListener("click", questionList)
 
-//function questionList(event) {
+var questionList= document.getElementById("questionL");
+console.log(questionList);
+document.getElementById("questionL").innerHTML= questions;
+//questionList.textContent="";
+//document.body.appendChild(questionList);
+
+
+
+
+
+
+
+
+
+
+
+
+//document.getElementByID("buttons").addEventListener("click", buttons)
+
+//function getQuestion(event) {
 //if user clicks on the textContent that matches correct answer in array then add a point and move to next question.
 //if (event.target.matches("button")) {
-//var button = event.target.textContent
-//if (textContent==="Seattle") {
+//var button = event.target.index
+//if (index==="true") {
 //questionIndex++;
 //}
 //else{

@@ -9,19 +9,17 @@ body {
     background-color: white;
 }
 
-h1 {
+h1, h2, h4 {
     text-align: center;
-    padding-top: 50px;
 }
 
 p {
     text-align: center;
-    padding-top: 25px;
 }
 
 button {
     text-align: center;
-    padding: 15px 15px;
+    padding: 15px 20px;
     border: 2px solid white;
     background-color: purple;
     color: white;
@@ -37,19 +35,40 @@ h4 {
     font-size: 30px;
 }
 
-#questions {
-    height: 90px;
+.answers {
+    display: flex;
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+.question-container {
+    display: flex;
+    display: inline-flex;
+    height: 110px;
     width: 300px;
     border: solid 2px black;
 }
 
-.quesList{
-    height: 210px;
-    width: 300px;
-    border: solid 2px black;
+.hide {
+    display: none;
 }
 
-.hide{
+.answerButtons {
+    text-align: center;
+    border: 2px solid white;
+    background-color: purple;
+    color: white;
+    width:200px;
+    height:70px;
+}
 
-    display:none;
+#buttons{
+    display:flex;
+    flex-direction:column;
+    height:100px;
+    width:150px;
+  
+    
+   
 }
