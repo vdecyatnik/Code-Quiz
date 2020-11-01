@@ -43,7 +43,7 @@ h4 {
     border: solid 2px black;
 }
 
-#list1 {
+.qlist{
     height: 210px;
     width: 300px;
     border: solid 2px black;
@@ -51,8 +51,9 @@ h4 {
 
 .answerB {
     display: flex;
-    width: 80px;
+    width: 190px;
     flex-direction: column;
-    display:none;
+    color:white;
+     /* display:none; */
    
 }

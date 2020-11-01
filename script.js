@@ -36,40 +36,34 @@ var list = document.createElement("ul");
 console.log(list);
 var listItemOne = document.createElement("li");
 console.log(listItemOne);
-// var buttonA = document.createElement("buttonA");
-// console.log(buttonA);
+var buttonA = document.createElement("buttonA");
+console.log(buttonA);
 var listItemTwo = document.createElement("li");
 console.log(listItemTwo);
-// var buttonB = document.createElement("buttonB")
-// console.log(buttonB);
+var buttonB = document.createElement("buttonB")
+console.log(buttonB);
 var listItemThree = document.createElement("li");
 console.log(listItemThree);
-// var buttonC = document.createElement("buttonC");
-// console.log(buttonC);
+var buttonC = document.createElement("buttonC");
+console.log(buttonC);
 var listItemFour = document.createElement("li");
 console.log(listItemFour);
-// var buttonD = document.createElement("buttonD");
-// console.log(buttonD);
+var buttonD = document.createElement("buttonD");
+console.log(buttonD);
 
 
 //timer
 var countdown;
 var seconds;
 
-
 document.getElementById("startButton").addEventListener("click", startGame)
 function startGame() {
 
-
   seconds = 120;
-
-  document.getElementById("timer").textContent = (seconds);
-  countdown = setInterval(function () {
+document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
 
 
     seconds--;
-
-
     document.getElementById("timer").textContent = seconds;
     if (seconds < 0) endGame();
 
@@ -80,9 +74,14 @@ function startGame() {
 }
 
 
-var firstPage = document.getElementById("questions");
 
-var answButtons = document.getElementById("list1");
+ document.getElementById("questions").textContent = questions;
+ 
+ 
+ 
+ 
+ 
+
 
 
 
@@ -143,11 +142,12 @@ function endGame() {
 
 //Quiz Page 1 Content
 
-// var answerButtons = document.createElement("button");
+// var answerButtons = document.createElement("BUTTON");
 // buttonA.textContent = ("A");
 // buttonB.textContent = ("B");
 // buttonC.textContent = ("C");
 // buttonD.textContent = ("D");
+
 
 // buttonA.setAttribute("style", "background-color: purple;, color:white");
 // buttonB.setAttribute("style", "background-color: purple;, color:white");
