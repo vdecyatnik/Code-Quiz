@@ -50,7 +50,7 @@ if (seconds < 0) endGame();
 
 
 
-var index;
+var questionIndex;
 
 for (var i = 0; i< questions.length; i++) {
   console.log(questions[i]);
@@ -66,9 +66,22 @@ for (var i = 0; i< questions.length; i++) {
 
 var questionList= document.getElementById("questionL");
 console.log(questionList);
-document.getElementById("questionL").innerHTML= questions;
+
+document.getElementById("questionL").textContent= questions[0];
 //questionList.textContent="";
 //document.body.appendChild(questionList);
+
+
+
+//document.getElementById("questionL").addEventListener("click", nextQuestion)
+//function nextQuestion(){
+
+  //questionIndex=0;
+
+
+
+
+//}
 
 
 
