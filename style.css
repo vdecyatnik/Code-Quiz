@@ -43,17 +43,13 @@ h4 {
     border: solid 2px black;
 }
 
-.qlist{
+.quesList{
     height: 210px;
     width: 300px;
     border: solid 2px black;
 }
 
-.answerB {
-    display: flex;
-    width: 190px;
-    flex-direction: column;
-    color:white;
-     /* display:none; */
-   
+.hide{
+
+    display:none;
 }

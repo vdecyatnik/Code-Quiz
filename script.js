@@ -1,55 +1,39 @@
 var questions = [
   question1 = {
-    ques: "Where is Valentina from?",
-    correctAnsw: "Seattle",
-    answArray: ["Seattle", "Chicago", "New York", "California"]
+    ques: "Where is Valentina from?\n(a) Seattle\n(b) Chicago\n(c)New York\n (d) California",
+    answer:"a"
 
   },
   question2 = {
-    ques: "What's Valentina's favorite animal?",
-    correctAnsw: "Dog",
-    answArray: ["Dog", "Cat", "Fish", "Turtle"]
+    ques: "What's Valentina's favorite animal?\n (a) Dog\n (b)Cat\n(c)Fish\n(d)Turtle",
+   answer:"a"
   },
   question3 = {
-    ques: "What is Valentina's favorite color?",
-    correctAnsw: "Black",
-    answArray: ["Red", "Purple", "Blue", "Black"]
+    ques: "What is Valentina's favorite color?\n(a)red\n(b)yellow\n(c)black\n(d)purple",
+    answer: "c"
+  
   },
   question4 = {
-    ques: "What is Valentina's favorite food?",
-    correctAnsw: "Pizza",
-    answArray: ["Soup", "Burgers", "Pizza", "Cereal"]
+    ques: "What is Valentina's favorite food?\n(a)burgers\n(b)carrots\n(c)eggs\n(d)cereal",
+    answer:"b"
   }
 
 ]
 
 
+var score=0;
 
 
+for (var i=0; i <questions.length;i++){
+  console.log(questions[i]);
 
 
+  if(questions.answer==="true"){
+    score ++;
+  }
+}
 
 
-//create unordered list for QP 1
-var list = document.createElement("ul");
-//create list items
-console.log(list);
-var listItemOne = document.createElement("li");
-console.log(listItemOne);
-var buttonA = document.createElement("buttonA");
-console.log(buttonA);
-var listItemTwo = document.createElement("li");
-console.log(listItemTwo);
-var buttonB = document.createElement("buttonB")
-console.log(buttonB);
-var listItemThree = document.createElement("li");
-console.log(listItemThree);
-var buttonC = document.createElement("buttonC");
-console.log(buttonC);
-var listItemFour = document.createElement("li");
-console.log(listItemFour);
-var buttonD = document.createElement("buttonD");
-console.log(buttonD);
 
 
 //timer
@@ -60,27 +44,57 @@ document.getElementById("startButton").addEventListener("click", startGame)
 function startGame() {
 
   seconds = 120;
-document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
-
+  document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
+startButton.classList.add("hide")
 
     seconds--;
     document.getElementById("timer").textContent = seconds;
     if (seconds < 0) endGame();
 
   }, 900);
-
-
-
 }
 
 
 
- document.getElementById("questions").textContent = questions;
- 
- 
- 
- 
- 
+
+
+//create unordered list for QP 1
+var list = document.createElement("ul");
+//create list items
+console.log(list);
+var listItemOne = document.createElement("button");
+document.body.appendChild(listItemOne);
+listItemOne.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
+
+console.log(listItemOne);
+var listItemTwo = document.createElement("button");
+document.body.appendChild(listItemTwo);
+listItemTwo.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
+
+console.log(listItemTwo);
+var listItemThree = document.createElement("button");
+
+document.body.appendChild(listItemThree);
+console.log(listItemThree);
+listItemThree.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
+var listItemFour = document.createElement("button");
+document.body.appendChild(listItemFour);
+console.log(listItemFour);
+listItemFour.setAttribute("style", "display:flex; flex-direction:column; background-color:purple; width:160px;")
+
+listItemOne.textContent="";
+listItemTwo.textContent="";
+listItemThree.textContent="";
+listItemFour.textContent="";
+
+
+
+
+
+
+
+
+
 
 
 
