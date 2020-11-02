@@ -42,7 +42,7 @@ document.getElementById("buttons").addEventListener("click", function (event) {
 
   console.log("click");
 
-  if (event.target.matches("buttons") && textContent === "Red");
+  if (event.target.matches("buttons") && classList.contains === "correct");
 
   document.getElementById("#container3").classList.add("hide")
 
