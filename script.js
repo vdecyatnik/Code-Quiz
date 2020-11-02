@@ -38,7 +38,7 @@ var questionContainer = document.getElementById("container3");
 var questionContainer = document.getElementById('container3');
 
 
-document.getElementById("buttons").addEventListener("click", function () {
+document.getElementById("buttons").addEventListener("click", function (event) {
 
   console.log("click");
 
