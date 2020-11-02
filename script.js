@@ -1,106 +1,60 @@
-var questions = [
-    {
-    ques: "Where is Valentina from? ",
-    answer: "0",
-    answrArray: ["Seattle", "Chicago", "Denver", "New York"]
-
-  },
-    {
-    ques: "What's Valentina's favorite animal?",
-    answer: "1",
-    answrArray: ["Cat", "Dog", "Turtle", "Fish"],
-  },
-     {
-    ques: "What is Valentina's favorite color?",
-    answer: "2",
-    answrArray: ["Purple", "Red", "Black", "Yellow"]
-  },
-     {
-    ques: "What is Valentina's favorite food?",
-    answer: "3",
-    answrArray: ["Carrots", "Cheese", "Steak", "Pizza"]
-  }
-
-]
 
 
 
-
-
-//timer
 var countdown;
 var seconds;
-var questionIndex;
+
+
+
 
 
 document.getElementById("startButton").addEventListener("click", startGame)
 function startGame() {
 
-seconds = 120;
-document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
-startButton.classList.add("hide")
+  seconds = 120;
+  document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
+ startButton.classList.add("hidden")
 
-seconds--;
-document.getElementById("timer").textContent = seconds;
-if (seconds < 0) endGame();
 
-}, 900);
+
+
+    seconds--;
+    document.getElementById("timer").textContent = seconds;
+    if (seconds < 0) endGame();
+
+  }, 900);
 }
 
 
 
 
-
-
-
-
-for (var i = 0; i< questions.length; i++) {
-  console.log(questions[i]);
-
-
-}
+var questionContainer= document.getElementById("container3");
 
 
 
 
 
+var questionContainer= document.getElementById('container3');
 
 
-
-//document.getElementById("questionL").addEventListener("click", nextQuestion)
-//function nextQuestion(){
-
-  //questionIndex=0;
+document.getElementById("buttons").addEventListener("click", function(){
 
 
+  if(event.target.matches("button") && textContent.matches==="true");
 
-//}
-
-
-
-
-
-
-var questionList= document.getElementById("questionL");
-var questionContent=document.getElementById("button");
-
-document.getElementById("questionL").textContent=questions[0].ques;
-document.getElementById("button").textContent=questions[i].answrArray[0];
+    container3.setAttribute("class", "hidden");
+  });
 
 
 
 
 
-var button = document.createElement("button");
+  function endGame() {
+    clearInterval(countdown);
+  
+  
+  }
 
-
-console.log(button);
-var button2 =document.createElement("button");
-console.log(button2);
-var button3 = document.createElement("button");
-console.log(button3);
-var button4= document.createElement("button");
-console.log(button4);
 
 
 
@@ -131,63 +85,3 @@ console.log(button4);
 //}
 //else{
 //seconds--;
-//}
-
-
-
-
-//}
-
-
-
-
-//}
-
-
-
-
-
-
-
-
-function endGame() {
-  clearInterval(countdown);
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

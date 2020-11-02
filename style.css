@@ -17,7 +17,7 @@ p {
     text-align: center;
 }
 
-#startButton {
+.sButton {
     text-align: center;
     padding: 15px 20px;
     border: 2px solid white;
@@ -35,24 +35,9 @@ h4 {
     font-size: 30px;
 }
 
-.answers {
-    display: flex;
-    border: 2px solid black;
-    height: 100px;
-    width: 100px;
-}
 
-.question-container {
-    display: flex;
-    display: inline-flex;
-    height: 110px;
-    width: 300px;
-    border: solid 2px black;
-}
 
-.hide {
-    display: none;
-}
+
 
   .answerB {  
     text-align: center;
