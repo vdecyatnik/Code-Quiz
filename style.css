@@ -39,7 +39,7 @@ h4 {
 
 
 
-  .answerB {  
+  .answerB, .correct {  
     text-align: center;
     border: 2px solid white;
     background-color: purple;
@@ -55,4 +55,9 @@ h4 {
 
   display:flex;
   flex-direction:column;
+}
+
+.hide{
+
+    display:none;
 }
