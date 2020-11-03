@@ -67,16 +67,16 @@ h4 {
     height: 150px;
 }
 
-.buttons {
+/* #buttons { 
     display: flex;
     flex-direction: column;
     width: 90px;
     height: 30px;
     background-color: purple;
-    color: white;
+    color:white;
     border: 2px solid grey;
     margin-left: 40%;
-}
+/* } */
 
 .questionsList {
     display: flex;

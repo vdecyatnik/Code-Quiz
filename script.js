@@ -46,19 +46,40 @@ var seconds;
 
 
 
-var questionsContainer = document.getElementById("questionsList")
-console.log(questionsContainer);
-document.getElementById("questionsList").textContent= questions[0].ques.answrArray;
+var questionContainer = document.getElementById("questionsList")
+console.log(questionContainer);
+document.getElementById("questionsList").textContent = questions[0].ques;
 
 
-var answerButtons= document.getElementsByClassName("button.buttons");
-document.getElementsByClassName("button.buttons").textContent=questions[0].answrArray;
-console.log(answerButtons);
+//var answerButtons= document.getElementById("buttons")
+//document.getElementById("buttons").textContent=questions[0].answrArray;
+
+var answerButton = document.createElement('button');
+console.log(answerButton);
+answerButton.id = "a-buttons";
+answerButton.textContent = questions[0].answrArray[0];
+answerButton.setAttribute = ("style", "background-color:purple; color:white;")
 
 
+var answerButton2 = document.createElement("button");
+console.log(answerButton2);
+answerButton2.id = "a-buttons2";
+answerButton2.textContent = questions[0].answrArray[1];
+
+
+var answerButton3 = document.createElement("button");
+console.log(answerButton3);
+answerButton3.id = "a-buttons3";
+answerButton3.textContent = questions[0].answrArray[2];
+
+var answerButton4 = document.createElement("button");
+console.log(answerButton4);
+answerButton4.id = "a-buttons3";
+answerButton4.textContent = questions[0].answrArray[3];
 
 
 document.getElementById("startButton").addEventListener("click", startGame)
+
 
 
 
@@ -67,8 +88,9 @@ function startGame() {
 
   seconds = 120;
   document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
-    startButton.style.display="none";
-    questionsList.style.display="block";
+    startButton.style.display = "none";
+
+    questionsList.style.display = "block";
     //getQuestion();
 
 
@@ -84,7 +106,7 @@ function startGame() {
 
 
 function getQuestion() {
-  
+
 
 
 
