@@ -45,53 +45,61 @@ var countdown;
 var seconds;
 
 
-
+//Questions List
 var questionContainer = document.getElementById("questionsList")
 console.log(questionContainer);
 document.getElementById("questionsList").textContent = questions[0].ques;
 
 
-//var answerButtons= document.getElementById("buttons")
-//document.getElementById("buttons").textContent=questions[0].answrArray;
 
+
+//buttonContainer
+var buttonContainer = document.getElementById("questionsList")
+console.log(buttonContainer);
+
+
+// Answer Buttons
 var answerButton = document.createElement('button');
 console.log(answerButton);
 answerButton.id = "a-buttons";
 answerButton.textContent = questions[0].answrArray[0];
-answerButton.setAttribute = ("style", "background-color:purple; color:white;")
+buttonContainer.append(answerButton);
 
 
 var answerButton2 = document.createElement("button");
 console.log(answerButton2);
-answerButton2.id = "a-buttons2";
+answerButton2.id = "a-buttons";
 answerButton2.textContent = questions[0].answrArray[1];
+buttonContainer.append(answerButton2);
 
 
 var answerButton3 = document.createElement("button");
 console.log(answerButton3);
-answerButton3.id = "a-buttons3";
+answerButton3.id = "a-buttons";
 answerButton3.textContent = questions[0].answrArray[2];
+buttonContainer.append(answerButton3);
 
 var answerButton4 = document.createElement("button");
 console.log(answerButton4);
-answerButton4.id = "a-buttons3";
+answerButton4.id = "a-buttons";
 answerButton4.textContent = questions[0].answrArray[3];
+buttonContainer.append(answerButton4);
 
 
+
+
+//Add eventlistener to Start Button
 document.getElementById("startButton").addEventListener("click", startGame)
-
-
-
-
 
 function startGame() {
 
   seconds = 120;
   document.getElementById("timer").textContent = (seconds); countdown = setInterval(function () {
     startButton.style.display = "none";
-
     questionsList.style.display = "block";
-    //getQuestion();
+
+
+
 
 
 
@@ -104,70 +112,19 @@ function startGame() {
 }
 
 
-
-function getQuestion() {
-
-
-
+function displayQuestion(event) {
+  //add event listener to buttons
+  questionContainer.addEventListener("click", displayQuestion)
 
 
 
+  var questionIndex = 0;
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-function getAnswer() {
-
-
-
-
+  //loop through questions and display them
 
 
 
 }
-
-//var questionContainer = document.getElementById("container1");
-
-
-
-
-
-
-////var questionContainer = document.getElementById("container1");
-
-
-//document.getElementById("buttons").addEventListener("click", function (event) {
-
-//console.log("click");
-
-
-//if (event.target.matches("buttons") && answer === "correct");
-
-
-
-//document.querySelector("#container1").style.display=("none");
-
-
-//})
-
-
-
-
-
-
-
-
 
 
 
@@ -176,6 +133,5 @@ function getAnswer() {
 
 function endGame() {
   clearInterval(countdown);
-
 
 }
