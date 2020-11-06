@@ -16,7 +16,6 @@
     <section class="container1" id="landingPage">
         <header>
             <h1>
-
                 QUIZ
             </h1>
 
@@ -25,50 +24,37 @@
             <div class="bDiv"> <button id="startButton" class="sButton">Start</button>
         </header>
 
-        <section id="container1" id="quizPage">
-
-
-            <h4>Seconds: <span id="timer"></span></h4>
-
-        </section>
-
-
-
     </section>
 
 
+    <section id="quizPage" class="">
+        <section>
+            <span id="timer"></span>
+        </section>
+        <div class="containerQ">
+            <h2 id="questionDisplay"></h2>
 
-    <div class="containerQ" id="containerQ2" >
-        <div id="questionsList" class="hide">
-        <div id = "buttonList">Questions</div>
-        <div id="a-buttons" class="buttons1 questionList">
-            <!-- <button id="buttons"></button>  -->
-            <!-- <button id="buttons"></button>  -->
-            <!-- <button id="buttons"></button>  -->
-            <!-- <button id="buttons"></button> -->
+            <div id="answersList">
+                <button id="a1">answer</button>
+                <button id="a2">answer</button>
+                <button id="a3">answer</button>
+                <button id="a4">answer</button>
+            </div>
+        </div>
+    </section>
 
+    <section id="scorePage" class="">
+        <h1>HighScore</h1>
+        <div class="highscore-container">
+        </div>
+        <button id="go-back"> Go Back</button>
+        <button id="clear-scores"> Clear Scores</button>
+    </section>
 
-        <!-- </div> -->
-
-
-
-
-</div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <section id="enter-initial" class="hide">
+        <h3>Final Score: <span id="display-score"></span></h3>
+        <h6>Save your initials: <span><input type="text" id="initials"></span></h6>
+    </section>
 
 
 

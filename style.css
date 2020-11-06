@@ -7,58 +7,15 @@
 
 body {
     background-color: white;
+
 }
-
-h1, h2, h4 {
-    text-align: center;
-}
-
-p {
-    text-align: center;
-}
-
-.sButton {
-    text-align: center;
-    padding: 15px 20px;
-    border: 2px solid white;
-    background-color: purple;
-    color: white;
-}
-
-.bDiv {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-}
-
-h4 {
-    font-size: 30px;
-}
-
-
- .containerQ {
-    margin-top: 50px;
-    border: 2px dotted black;
-    width: 100%;
-    height: 150px;
-}
-
-#a-buttons { 
-    display: flex;
-    flex-direction: column;
-    width: 90px;
-    height: 30px;
-    background-color: purple;
-    color:white;
-    border: 2px solid grey;
-    margin-left: 40%;
-} 
-.questionsList {
-    display: flex;
-    
-}
-
  .hide { 
     display: none;
  } 
+
+.containerQ{
+    border: solid 2px black;
+    width:400px;
+    height:400px;
+}
 
