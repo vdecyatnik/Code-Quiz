@@ -109,6 +109,7 @@ function startGame() {
     if (secondsLeft = 0) {
       endGame();
       secondsLeft = seconds;
+      
     }
 
   }, 1000);
@@ -146,7 +147,8 @@ function nextQuestion() {
 
 
 var score = 0;
-score.textContent = "Score:"+ score;
+document.getElementById("score").textContent = "Score:" + score;
+console.log(score);
 
 answersList.addEventListener("click", function (event) {
 
