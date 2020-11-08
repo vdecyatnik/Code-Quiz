@@ -30,7 +30,7 @@ var questions = [
 //HTML Elements
 var landingPage = document.getElementById("landingPage");
 var scorePage = document.getElementById("scorePage");
-var enterInitial = document.getElementById("enterinitial");
+var enterInitial = document.getElementById("enterInitial");
 var quizPage = document.getElementById("quizPage");
 
 
@@ -106,7 +106,7 @@ function startGame() {
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
 
-    if (secondsLeft = 0) {
+    if (secondsLeft < 0) {
       endGame();
       secondsLeft = seconds;
       
@@ -127,8 +127,10 @@ var questionIndex = 0;
 function nextQuestion() {
 
   if (questionIndex >= questions.length) {
-    //renderLastInitials();//to do add get initial function save
 
+    enterInitial.classList.remove("hide");
+    quizPage.classList.add("hide");
+    landingPage.classList.add("hide");
     return;
   }
 
@@ -146,9 +148,9 @@ function nextQuestion() {
 }
 
 
-var score = 0;
-document.getElementById("score").textContent = "Score:" + score;
-console.log(score);
+//var score = 0;
+//document.getElementById("score").textContent = "Score:" + score;
+//console.log(score);
 
 answersList.addEventListener("click", function (event) {
 
@@ -213,6 +215,7 @@ answersList.addEventListener("click", function (event) {
 
 function endGame() {
   clearInterval(timeInterval);
+
 
   //add code to display initals page
 
