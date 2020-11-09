@@ -43,6 +43,7 @@ var displayScore = document.getElementById("displayscore");
 var initials = document.getElementById("initials");
 
 
+let highScore = [];
 // Variables
 var timer = document.getElementById("timer");
 var score = document.getElementById("score");
@@ -83,7 +84,6 @@ console.log(seconds);
 
 
 
-
 //Add event listener to start button
 document.getElementById("startButton").addEventListener("click", startGame)
 
@@ -92,13 +92,15 @@ var timeInterval
 
 function startGame() {
   numberCorrect = 0;
-  numberIncorrect = 0;
+  //numberIncorrect = 0;
   secondsLeft = seconds;
-  quiz = true;
+  //quiz = true;
   questionIndex = 0
-  score = 0;
-  //hide();
+  //score = 0;
+  hide();
   quizPage.classList.remove('hide');
+  landingPage.classList.add("hide");
+
   nextQuestion();
   timer.textContent = (seconds);
 
@@ -109,7 +111,7 @@ function startGame() {
     if (secondsLeft < 0) {
       endGame();
       secondsLeft = seconds;
-      
+
     }
 
   }, 1000);
@@ -148,21 +150,29 @@ function nextQuestion() {
 }
 
 
-//var score = 0;
-//document.getElementById("score").textContent = "Score:" + score;
-//console.log(score);
+
+
+var score =0;
+document.getElementById("score").textContent= "Score:" +score;
+console.log(score);
+
 
 answersList.addEventListener("click", function (event) {
 
+
   event.preventDefault();
   if (event.target.matches("button")) {
+  
+    gameScore= score;
+
     let button = event.target;
     let selectedAnswer = button.textContent;
-    if (selectedAnswer == questions[questionIndex - 1].answer) {
-      score++;
+    if (selectedAnswer == questions[questionIndex -1 ].answer) {
+       score++;
     }
     else {
       secondsLeft -= 10;
+       
     }
     nextQuestion();
   }
@@ -174,41 +184,54 @@ answersList.addEventListener("click", function (event) {
 
 
 
-//function renderLastInitials() {
+function renderLastInitials() {
+
+  //get last initials from local storage
+  var lastInitials = JSON.parse(localStorage.getItem("initials"));
+  userInitialsSpan.textContent = lastInitials.initials;
+  // get last score from local storage
+  var lastScore = localStorage.getItem("displayscore");
+  
 
 
-  //var lastInitials = localStorage.getItem("initialSaver");
-
-  //var lastScore = localStorage.getItem("score");
 
 
-//}
+
+}
 
 
 
 //submit initials button
-//var saveInitials = document.getElementById("initialSaver");
+var saveInitials = document.getElementById("initials");
 
-//var lastInitials = localStorage.getItem("initialSaver");
-
-//var saveScore = document.getElementById("save");
-
-//var lastScore = localStorage.getItem("score");
-
-//initialSaver.addEventListener("click", function (event) {
-
-  //save Initials and score to Local Storage
-  //localStorage.setItem("initialSaver", initialSaver);
-
-  //localStorage.setItem("score", score);
+var userInitialsSpan = document.querySelector("#initials");
 
 
 
 
-  //renderLastInitials();
+var displayScore = document.getElementById("displayscore");
+
+//var finalScoreSpan = document.querySelector("#displayscore");
 
 
-//});
+
+
+
+
+initialSaver.addEventListener("click", function (event) {
+  event.preventDefault();
+  //set Initials  to Local Storage
+  localStorage.setItem("initials", JSON.stringify(initials));
+  //set final score to local storage
+  localStorage.setItem("displayscore", displayscore);
+  console.log(initials);
+  console.log(displayscore);
+
+
+  renderLastInitials();
+
+
+});
 
 
 
