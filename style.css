@@ -14,8 +14,85 @@ body {
  } 
 
 .containerQ{
-    border: solid 2px black;
-    width:400px;
+    
     height:400px;
+    display:flex;
+    justify-content: flex-start;
+    
 }
 
+h2{
+    text-align:center;
+    float:left;
+    margin-right:20px;
+    margin-top:150px;
+    font-size:30px;
+}
+
+h1{
+
+    font-size: 100px;
+    text-align:center;
+}
+
+p{
+    text-align:center;
+    font-size: 30px;
+}
+
+.sButton{
+
+    background-color: purple;
+    color:white;
+    height: 30px;
+    width:50px;
+    border:white;
+   
+
+
+}
+
+.bDiv{
+    display:flex;
+    justify-content: center;
+}
+
+#answersList{
+    display:flex;
+    flex-direction:column;
+    
+   
+    
+}
+
+#a1, #a2, #a3, #a4{
+    background-color:purple;
+    color:white;
+    height:45px;
+    width:60px;
+    border:white;
+    margin-top:25px;
+
+
+}
+
+h3, h6{
+    font-size:30px;
+}
+
+#initialSaver{
+
+    color:white;
+    background-color:purple;
+    border:none;
+    height:45px;
+    width:100px;
+    margin-top:10px;
+
+}
+
+#enterInitial{
+
+    display:flex;
+    flex-direction:column;
+}

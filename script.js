@@ -1,7 +1,7 @@
 
 var questions = [
   {
-    ques: "where is Valentina from?",
+    ques: "Where is Valentina from?",
     answer: "Seattle",
     answrArray: ["Seattle", "New York", "Denver", "Texas"]
   },
@@ -133,6 +133,8 @@ function nextQuestion() {
     enterInitial.classList.remove("hide");
     quizPage.classList.add("hide");
     landingPage.classList.add("hide");
+    
+    
     return;
   }
 
@@ -152,8 +154,8 @@ function nextQuestion() {
 
 
 
-var score =0;
-document.getElementById("score").textContent= "Score:" +score;
+var score = 0;
+document.getElementById("score").textContent = "Score:" + score;
 console.log(score);
 
 
@@ -162,18 +164,18 @@ answersList.addEventListener("click", function (event) {
 
   event.preventDefault();
   if (event.target.matches("button")) {
-  
-    gameScore= score;
+
+    //gameScore= score;
 
     let button = event.target;
     let selectedAnswer = button.textContent;
-    if (selectedAnswer == questions[questionIndex -1 ].answer) {
-       score++;
-       document.getElementById('score').textContent= score;
+    if (selectedAnswer == questions[questionIndex - 1].answer) {
+      score++;
+      document.getElementById('score').textContent = score;
     }
     else {
       secondsLeft -= 10;
-       
+
     }
     nextQuestion();
   }
@@ -190,11 +192,12 @@ function renderLastInitials() {
   //get last initials from local storage
   var lastInitials = JSON.parse(localStorage.getItem("initials"));
   console.log(lastInitials);
-  userInitialsSpan.textContent = lastInitials.initials;
+  lastInitials.textContent = initials;
   // get last score from local storage
-  var lastScore = localStorage.getItem("displayscore");
-  
-
+  var lastScore = (localStorage.getItem("score"));
+  console.log(lastScore);
+  displayScore.textContent=  score;
+ 
 
 
 
@@ -206,14 +209,11 @@ function renderLastInitials() {
 //submit initials button
 var saveInitials = document.getElementById("initials");
 
-var userInitialsSpan = document.querySelector("#initials");
 
 
+var displayScore = document.getElementById("displayscore");
 
-
-//var displayScore = document.getElementById("displayscore");
-
-//var finalScoreSpan = document.querySelector("#displayscore");
+var finalScoreSpan = document.querySelector("#displayscore")
 
 
 
@@ -221,21 +221,25 @@ var userInitialsSpan = document.querySelector("#initials");
 
 
 initialSaver.addEventListener("click", function (event) {
-  event.preventDefault();
+  //event.preventDefault();
   //set Initials  to Local Storage
   localStorage.setItem("initials", JSON.stringify(initials));
+  console.log(initials.value);
   //set final score to local storage
-  localStorage.setItem("displayscore", displayscore);
+  localStorage.setItem("displayscore",  JSON.stringify( displayscore));
   console.log(initials);
   console.log(displayscore);
 
 
   renderLastInitials();
+ 
+  
 
 
 });
 
-
+//function showHighScore(){
+//highScore.push(score);
 
 
 function endGame() {
