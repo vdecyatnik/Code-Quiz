@@ -169,6 +169,7 @@ answersList.addEventListener("click", function (event) {
     let selectedAnswer = button.textContent;
     if (selectedAnswer == questions[questionIndex -1 ].answer) {
        score++;
+       document.getElementById('score').textContent= score;
     }
     else {
       secondsLeft -= 10;
@@ -188,6 +189,7 @@ function renderLastInitials() {
 
   //get last initials from local storage
   var lastInitials = JSON.parse(localStorage.getItem("initials"));
+  console.log(lastInitials);
   userInitialsSpan.textContent = lastInitials.initials;
   // get last score from local storage
   var lastScore = localStorage.getItem("displayscore");
@@ -209,7 +211,7 @@ var userInitialsSpan = document.querySelector("#initials");
 
 
 
-var displayScore = document.getElementById("displayscore");
+//var displayScore = document.getElementById("displayscore");
 
 //var finalScoreSpan = document.querySelector("#displayscore");
 
