@@ -44,6 +44,7 @@ var initials = document.getElementById("initials");
 
 
 let highScore = [];
+
 // Variables
 var timer = document.getElementById("timer");
 var score = document.getElementById("score");
@@ -87,6 +88,7 @@ console.log(seconds);
 //Add event listener to start button
 document.getElementById("startButton").addEventListener("click", startGame)
 
+let quiz = false;
 
 var timeInterval
 
@@ -94,26 +96,30 @@ function startGame() {
   numberCorrect = 0;
   //numberIncorrect = 0;
   secondsLeft = seconds;
-  //quiz = true;
+  quiz = true;
   questionIndex = 0
   //score = 0;
-  hide();
-  quizPage.classList.remove('hide');
+  //hide();
+  quizPage.classList.remove("hide");
   landingPage.classList.add("hide");
+  
 
+  
   nextQuestion();
+  enterInitial.classList.remove("hide");
   timer.textContent = (seconds);
 
   timeInterval = setInterval(function () {
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
 
-    if (secondsLeft < 0) {
+    if (secondsLeft < 0 ) {
       endGame();
       secondsLeft = seconds;
 
     }
 
+      
   }, 1000);
 }
 
@@ -121,18 +127,18 @@ function startGame() {
 
 
 
+
 var questionIndex = 0;
 
+score.textContent= score;
 
 
 
 function nextQuestion() {
 
   if (questionIndex >= questions.length) {
-
-    enterInitial.classList.remove("hide");
-    quizPage.classList.add("hide");
-    landingPage.classList.add("hide");
+   quizPage.classList.add('hide');
+   renderLastInitials();
     
     
     return;
@@ -165,8 +171,7 @@ answersList.addEventListener("click", function (event) {
   event.preventDefault();
   if (event.target.matches("button")) {
 
-    //gameScore= score;
-
+   
     let button = event.target;
     let selectedAnswer = button.textContent;
     if (selectedAnswer == questions[questionIndex - 1].answer) {
@@ -190,7 +195,7 @@ answersList.addEventListener("click", function (event) {
 function renderLastInitials() {
 
   //get last initials from local storage
-  var lastInitials = JSON.parse(localStorage.getItem("initials"));
+  var lastInitials =localStorage.getItem("initials");
   console.log(lastInitials);
   lastInitials.textContent = initials;
   // get last score from local storage
@@ -223,10 +228,10 @@ var finalScoreSpan = document.querySelector("#displayscore")
 initialSaver.addEventListener("click", function (event) {
   //event.preventDefault();
   //set Initials  to Local Storage
-  localStorage.setItem("initials", JSON.stringify(initials));
+  localStorage.setItem("initials", initials.value);
   console.log(initials.value);
   //set final score to local storage
-  localStorage.setItem("displayscore",  JSON.stringify( displayscore));
+  localStorage.setItem("displayscore",   displayscore.value);
   console.log(initials);
   console.log(displayscore);
 
