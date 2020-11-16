@@ -56,13 +56,7 @@ var buttonList = document.getElementById("buttonList");
 
 var abuttons = document.getElementById("abuttons");
 
-//var saveInitials = localStorage.getItem("initials");
-
-//var saveScore = localStorage.getItem("displayscore");
-
 var answersList = document.getElementById("answersList");
-
-
 
 var pageArray = [landingPage, quizPage, enterInitial, scorePage];
 
@@ -207,9 +201,6 @@ var saveInitials = document.getElementById("initials");
 var initials
 
 var lastScore = document.getElementById("finalScore");
-
-
-
 
 
 var lastScore = document.getElementById("displayScore");
