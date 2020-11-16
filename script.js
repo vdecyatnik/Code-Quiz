@@ -1,27 +1,27 @@
 
 var questions = [
   {
-    ques: "Where is Valentina from?",
-    answer: "Seattle",
-    answrArray: ["Seattle", "New York", "Denver", "Texas"]
+    ques: "Which of the following is not JavaScript data types?",
+    answer: "Float",
+    answrArray: ["Undefined", "Number", "Boolean", "Float"]
   },
 
   {
-    ques: "What's Valentina's favorite animal?",
-    answer: "Dog",
-    answrArray: ["Dog", 'Cat', "Turtle", "Cow"]
+    ques: "Which company developed JavaScript?",
+    answer: "Netscape",
+    answrArray: ["Netscape", 'Bell Labs', "Sun Microsystems", "IBM"]
   },
 
   {
-    ques: "What's Valentina's favorite color?",
-    answer: "Black",
-    answrArray: ["Red", "Black", "Yellow", "Green"]
+    ques: "Inside which HTML element do we put Javascript?",
+    answer: "<script>",
+    answrArray: ["<script>", "<head>", "<style>", "<meta>"]
   },
 
   {
-    ques: "What's Valentina's favorite food?",
-    answer: "Pizza",
-    answrArray: ["Cheese", "Milk", "Pizza", "Cookies"]
+    ques: "What is the original name of JavaScript??",
+    answer: "Mocha",
+    answrArray: ["LiveScript", "Mocha", "EScript", "JavaScript"]
   }
 
 ]
@@ -35,19 +35,20 @@ var quizPage = document.getElementById("quizPage");
 
 
 var startButton = document.getElementById("startButton");
-var goBack = document.getElementById("go-back");
-var clearScore = document.getElementById("clearscore");
+var playAgain = document.getElementById("playAgain");
+var clearScore = document.getElementById("clearScore");
 
 
-var displayScore = document.getElementById("displayscore");
+var displayScore = document.getElementById("displayScore");
 var initials = document.getElementById("initials");
+var highScoreKey = "highScoreKey";
+var highScoresArray = JSON.parse(localStorage.getItem(highScoreKey)) || [];
 
 
-let highScore = [];
 
 // Variables
 var timer = document.getElementById("timer");
-var score = document.getElementById("score");
+var scoreEl = document.getElementById("score");
 
 var questionDisplay = document.getElementById("questionDisplay");
 
@@ -87,8 +88,7 @@ console.log(seconds);
 
 //Add event listener to start button
 document.getElementById("startButton").addEventListener("click", startGame)
-
-let quiz = false;
+quiz = true;
 
 var timeInterval
 
@@ -102,9 +102,9 @@ function startGame() {
   //hide();
   quizPage.classList.remove("hide");
   landingPage.classList.add("hide");
-  
 
-  
+
+
   nextQuestion();
   enterInitial.classList.remove("hide");
   timer.textContent = (seconds);
@@ -113,13 +113,13 @@ function startGame() {
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
 
-    if (secondsLeft < 0 ) {
+    if (secondsLeft === 0) {
       endGame();
       secondsLeft = seconds;
 
     }
 
-      
+
   }, 1000);
 }
 
@@ -128,26 +128,28 @@ function startGame() {
 
 
 
+
+
 var questionIndex = 0;
 
-score.textContent= score;
+//score.textContent= score;
 
 
 
 function nextQuestion() {
 
   if (questionIndex >= questions.length) {
-   quizPage.classList.add('hide');
-   renderLastInitials();
-    
-    
+    quizPage.classList.add('hide');
+    displayScore.textContent = score;
+    //renderLastInitials();
+    localStorage.setItem("score", score);
     return;
   }
 
   document.getElementById("questionDisplay");
   questionDisplay.textContent = (questions[questionIndex].ques);
   console.log(questionDisplay);
-
+  scoreEl.textContent = score;
 
   for (var i = 0; i < 4; i++) {
     let answer = questions[questionIndex].answrArray[i];
@@ -161,7 +163,7 @@ function nextQuestion() {
 
 
 var score = 0;
-document.getElementById("score").textContent = "Score:" + score;
+scoreEl.textContent = "Score:" + score;
 console.log(score);
 
 
@@ -171,12 +173,14 @@ answersList.addEventListener("click", function (event) {
   event.preventDefault();
   if (event.target.matches("button")) {
 
-   
+
     let button = event.target;
     let selectedAnswer = button.textContent;
-    if (selectedAnswer == questions[questionIndex - 1].answer) {
+    if (selectedAnswer === questions[questionIndex - 1].answer) {
       score++;
-      document.getElementById('score').textContent = score;
+
+      console.log(score);
+
     }
     else {
       secondsLeft -= 10;
@@ -188,69 +192,75 @@ answersList.addEventListener("click", function (event) {
 
 
 
+
 })
 
 
 
-function renderLastInitials() {
 
-  //get last initials from local storage
-  var lastInitials =localStorage.getItem("initials");
-  console.log(lastInitials);
-  lastInitials.textContent = initials;
-  // get last score from local storage
-  var lastScore = (localStorage.getItem("score"));
-  console.log(lastScore);
-  displayScore.textContent=  score;
- 
-
-
-
-
-}
 
 
 
 //submit initials button
 var saveInitials = document.getElementById("initials");
 
+var initials
 
-
-var displayScore = document.getElementById("displayscore");
-
-var finalScoreSpan = document.querySelector("#displayscore")
-
+var lastScore = document.getElementById("finalScore");
 
 
 
 
 
-initialSaver.addEventListener("click", function (event) {
-  //event.preventDefault();
-  //set Initials  to Local Storage
-  localStorage.setItem("initials", initials.value);
-  console.log(initials.value);
-  //set final score to local storage
-  localStorage.setItem("displayscore",   displayscore.value);
+var lastScore = document.getElementById("displayScore");
+
+
+
+
+//submit initials button
+var submitInitials = document.getElementById("initialSaver");
+document.getElementById("enterInitial").addEventListener("click", function (e) {
+
+
+  initials = document.getElementById("initials").value;
+  console.log("initialshere");
   console.log(initials);
-  console.log(displayscore);
+  highScoresArray.push({ score, initials });
+  console.log(highScoresArray);
+  highScoreString = JSON.stringify(highScoresArray);
+
+  localStorage.setItem(highScoreKey, highScoreString);
 
 
-  renderLastInitials();
- 
-  
+
+
+
 
 
 });
 
-//function showHighScore(){
-//highScore.push(score);
+
+
+
+
+
+
+localStorage.setItem('highScore', JSON.stringify(highScoresArray))
+const data = JSON.parse(localStorage.getItem('items'))
+
+
+
+
+
+
+
 
 
 function endGame() {
   clearInterval(timeInterval);
 
 
-  //add code to display initals page
+
+
 
 } 

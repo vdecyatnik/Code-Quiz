@@ -89,8 +89,15 @@ p{
 
 }
 
-h3, h6{
+h3{
     font-size:30px;
+}
+
+h6{
+
+text-align:center;
+font-size:30px;
+
 }
 
 #initialSaver{
@@ -100,19 +107,62 @@ h3, h6{
     border:none;
     height:45px;
     width:100px;
-    margin-top:10px;
-
+    
+ 
 }
 
-#enterInitial :hide{
+#enterInitial {
 
     display:flex;
     flex-direction:column;
+    
+
 }
 
-#scorepage:hide{
+
+
+.container{
+
+display:flex;
+justify-content: center;
 
 
 
+}
 
+.footer{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    
+}
+
+.button{
+    
+    font-weight: bold;
+    text-decoration: none;
+   margin-right:10px;
+   
+
+
+}
+
+.saveButton{
+
+    background-color: purple;
+    color:white;
+    height: 30px;
+    width:50px;
+    border:white;
+    margin-left:45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+
+
+
+}
+
+#end{
+    justify-content:space-between;
 }

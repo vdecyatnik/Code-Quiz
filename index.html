@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timed Quiz</title>
+    <title>Game JS</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -13,7 +13,7 @@
 
 <body>
 
-    <section class="container1" id="landingPage" >
+    <section class="container1" id="landingPage">
         <header>
             <h1>
                 QUIZ
@@ -31,7 +31,7 @@
         <section>
             <span id="timer"></span>
             <span id="score"></span>
-            
+
         </section>
         <div class="containerQ">
             <h2 id="questionDisplay"></h2>
@@ -50,23 +50,31 @@
 
 
     <section id="enterInitial" class="hide">
-        <h3>Final Score: <span id="displayscore"></span></h3>
-        <h6>Save your initials: <span><input type="text" id="initials"></span></h6>
-        <button id="initialSaver" >Submit Initials</button>
-       
-        
+        <h3>All Done! Your final Score is: <span id="displayScore"></span></h3>
+        <h6>Save: <span><input type="text" id="initials"></span></h6>
+       <a href= "highscores.html" button id="initialSaver" type="submit">Submit Initials</button> </a>
+        <!-- add eventListener to save initials and score in local storage -->
 
 
 
-           </section>
+
+    </section>
 
 
-    
+
+
+
+
+
+
+
+
 
 
 
 </body>
 
 <script src="script.js"></script>
+
 
 </html>
