@@ -1,18 +1,13 @@
 var scorePageScore = document.getElementById("getfinalscore");
 var scorePageInitials = document.getElementById("getinitials");
 
-var HighScoreDisplayArr=[];
-var showScoresArray=[];
+var HighScoreDisplayArr = [];
+var showScoresArray = [];
 var highScoreKey = "highScoreKey";
 
 
+showScoresArray = JSON.parse(localStorage.getItem(highScoreKey));
 
-var unOrderList = document.createElement("ul");
-console.log(unOrderList);
-var list = document.createElement("li");
-console.log(list);
-unOrderList.appendChild(list);
-document.getElementById("scorelist").appendChild(list);
 
 
 
@@ -26,23 +21,27 @@ document.getElementById("scorelist").appendChild(list);
 
 
 function renderLastInitials() {
-
+  var unOrderList = document.createElement("ul");
+  console.log(unOrderList);
   for (var i = 0; i < showScoresArray.length; i++) {
 
-//and set the 'listItem.textContent' equal to 'todo'
-
-    list.textContent=showScoresArray[i];
-//APPEND the 'listItem' to the new 'todoList'
-
-    
-  //append to screen
- 
-
+    var list = document.createElement("li");
+    var span = document.createElement("span");
+    span.textContent=showScoresArray[i].score;
+    list.appendChild(span);
+    var span = document.createElement("span");
+    span.textContent=showScoresArray[i].initials;
+    list.appendChild(span);
 
 
   }
 
-  showScoresArray = JSON.parse(localStorage.getItem(highScoreKey));
+  document.getElementById("scorelist").appendChild(list);
+  
+
+
+
+  
   console.log(showScoresArray);
   console.log(HighScoreDisplayArr);
 

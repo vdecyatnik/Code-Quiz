@@ -84,6 +84,7 @@ console.log(seconds);
 document.getElementById("startButton").addEventListener("click", startGame)
 quiz = true;
 
+
 var timeInterval
 
 function startGame() {
@@ -95,12 +96,14 @@ function startGame() {
   //score = 0;
   //hide();
   quizPage.classList.remove("hide");
+  
   landingPage.classList.add("hide");
+  
 
 
 
   nextQuestion();
-  enterInitial.classList.remove("hide");
+  
   timer.textContent = (seconds);
 
   timeInterval = setInterval(function () {
@@ -115,6 +118,7 @@ function startGame() {
 
 
   }, 1000);
+  
 }
 
 
@@ -140,7 +144,6 @@ function nextQuestion() {
     return;
   }
 
-  document.getElementById("questionDisplay");
   questionDisplay.textContent = (questions[questionIndex].ques);
   console.log(questionDisplay);
   scoreEl.textContent = score;
@@ -210,7 +213,7 @@ var lastScore = document.getElementById("displayScore");
 
 //submit initials button
 var submitInitials = document.getElementById("initialSaver");
-document.getElementById("enterInitial").addEventListener("click", function (e) {
+submitInitials.addEventListener("click", function (e) {
 
 
   initials = document.getElementById("initials").value;
