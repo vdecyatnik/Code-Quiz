@@ -163,10 +163,13 @@ justify-content: center;
 
 }
 
-#end{
-    justify-content:space-between;
-}
+
 
 .hide{
     display:none;
 }
+
+#end{
+    justify-content:space-between;
+}
+

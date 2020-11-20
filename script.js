@@ -58,7 +58,7 @@ var abuttons = document.getElementById("abuttons");
 
 var answersList = document.getElementById("answersList");
 
-var pageArray = [landingPage, quizPage, enterInitial, scorePage];
+var pageArray = [landingPage, quizPage, enterInitial];
 
 
 
@@ -94,16 +94,16 @@ function startGame() {
   quiz = true;
   questionIndex = 0
   //score = 0;
-  //hide();
+ 
   quizPage.classList.remove("hide");
   
   landingPage.classList.add("hide");
+ 
   
-
 
 
   nextQuestion();
-  
+ 
   timer.textContent = (seconds);
 
   timeInterval = setInterval(function () {
@@ -118,6 +118,8 @@ function startGame() {
 
 
   }, 1000);
+
+  
   
 }
 
@@ -139,6 +141,7 @@ function nextQuestion() {
   if (questionIndex >= questions.length) {
     quizPage.classList.add('hide');
     displayScore.textContent = score;
+    enterInitial.style.display="block";
     //renderLastInitials();
     localStorage.setItem("score", score);
     return;
@@ -184,6 +187,7 @@ answersList.addEventListener("click", function (event) {
 
     }
     nextQuestion();
+    
   }
 
 
@@ -191,9 +195,6 @@ answersList.addEventListener("click", function (event) {
 
 
 })
-
-
-
 
 
 
@@ -253,7 +254,7 @@ const data = JSON.parse(localStorage.getItem('items'))
 function endGame() {
   clearInterval(timeInterval);
 
-
+  
 
 
 
