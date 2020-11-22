@@ -19,10 +19,34 @@ var questions = [
   },
 
   {
-    ques: "What is the original name of JavaScript??",
+    ques: "What is the original name of JavaScript?",
     answer: "Mocha",
     answrArray: ["LiveScript", "Mocha", "EScript", "JavaScript"]
+  },
+
+  {
+
+    ques: "JavaScipt is.....?",
+    answer: "object based",
+    answrArray: ["subjective", "objective", "evil", "object based"]
+  },
+
+  {
+    ques:"Which one of these is not a logical operator?",
+    answer: "&",
+    answrArray:["!", "&", "||", "&&"]
+  },
+
+  {
+    ques:"Which of the following variable types does not exist in Javascript?",
+    answer: "string",
+    answrArray: ["boolean", "object", "double", "string"]
   }
+
+
+
+
+
 
 ]
 
