@@ -52,11 +52,15 @@ p {
     height: 30px;
     width: 50px;
     border: white;
+    
 }
 
 .bDiv {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top:20px;
+    height:100px;
 }
 
 #answersList {
@@ -159,7 +163,17 @@ h6 {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    padding-bottom:20px;
-    color:purple;
-    font-weight:bold;
+    padding-bottom: 20px;
+    color: purple;
+    font-weight: bold;
 }
+
+.HSPage {
+    background-color: purple;
+    color: white;
+    height: 45px;
+    width: 90px;
+    border: white;
+    
+}
+
