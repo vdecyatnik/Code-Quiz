@@ -36,9 +36,12 @@ function renderLastInitials(){
 
 
 function clearLocalStorage(){
-
+  var listItems = document.getElementById("initial-scoreList");
+ 
   localStorage.removeItem("highScoreKey");
+  listItems.innerHTML = "";  
 
+  
 
 
 }
