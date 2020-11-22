@@ -32,21 +32,16 @@ var questions = [
   },
 
   {
-    ques:"Which one of these is not a logical operator?",
+    ques: "Which one of these is not a logical operator?",
     answer: "&",
-    answrArray:["!", "&", "||", "&&"]
+    answrArray: ["!", "&", "||", "&&"]
   },
 
   {
-    ques:"Which of the following variable types does not exist in Javascript?",
+    ques: "Which of the following variable types does not exist in Javascript?",
     answer: "string",
     answrArray: ["boolean", "object", "double", "string"]
   }
-
-
-
-
-
 
 ]
 
@@ -65,12 +60,7 @@ var clearScore = document.getElementById("clearScore");
 
 var displayScore = document.getElementById("displayScore");
 var initials = document.getElementById("initials");
-var highScoreKey = "highScoreKey";
-var highScoresArray = JSON.parse(localStorage.getItem(highScoreKey)) || [];
 
-
-
-// Variables
 var timer = document.getElementById("timer");
 var scoreEl = document.getElementById("score");
 
@@ -82,8 +72,13 @@ var abuttons = document.getElementById("abuttons");
 
 var answersList = document.getElementById("answersList");
 
-var pageArray = [landingPage, quizPage, enterInitial];
 
+//Local Storage
+var highScoreKey = "highScoreKey";
+var highScoresArray = JSON.parse(localStorage.getItem(highScoreKey)) || [];
+
+//Quiz Pages Array
+var pageArray = [landingPage, quizPage, enterInitial];
 
 
 //Function to hide pages
@@ -102,32 +97,23 @@ var seconds = 120;
 timer.textContent = "Time: " + seconds;
 console.log(seconds);
 
-
-
 //Add event listener to start button
 document.getElementById("startButton").addEventListener("click", startGame)
-quiz = true;
 
-
-var timeInterval
 
 function startGame() {
   numberCorrect = 0;
-  //numberIncorrect = 0;
   secondsLeft = seconds;
-  quiz = true;
   questionIndex = 0
-  //score = 0;
- 
+
   quizPage.classList.remove("hide");
-  
   landingPage.classList.add("hide");
- 
-  
+
+
 
 
   nextQuestion();
- 
+
   timer.textContent = (seconds);
 
   timeInterval = setInterval(function () {
@@ -135,7 +121,9 @@ function startGame() {
     timer.textContent = "Time: " + secondsLeft;
 
     if (secondsLeft === 0) {
+
       endGame();
+
       secondsLeft = seconds;
 
     }
@@ -143,21 +131,12 @@ function startGame() {
 
   }, 1000);
 
-  
-  
+
+
 }
 
 
-
-
-
-
-
-
 var questionIndex = 0;
-
-//score.textContent= score;
-
 
 
 function nextQuestion() {
@@ -165,8 +144,8 @@ function nextQuestion() {
   if (questionIndex >= questions.length) {
     quizPage.classList.add('hide');
     displayScore.textContent = score;
-    enterInitial.style.display="block";
-    //renderLastInitials();
+
+    enterInitial.style.display = "block";
     localStorage.setItem("score", score);
     return;
   }
@@ -184,19 +163,14 @@ function nextQuestion() {
 }
 
 
-
-
 var score = 0;
-scoreEl.textContent = "Score:" + score;
 console.log(score);
-
 
 answersList.addEventListener("click", function (event) {
 
 
   event.preventDefault();
   if (event.target.matches("button")) {
-
 
     let button = event.target;
     let selectedAnswer = button.textContent;
@@ -211,26 +185,17 @@ answersList.addEventListener("click", function (event) {
 
     }
     nextQuestion();
-    
+
   }
-
-
-
-
 
 })
 
 
 
 
-//submit initials button
+//submit initials span
 var saveInitials = document.getElementById("initials");
-
-var initials
-
-var lastScore = document.getElementById("finalScore");
-
-
+//display final score
 var lastScore = document.getElementById("displayScore");
 
 
@@ -250,35 +215,24 @@ submitInitials.addEventListener("click", function (e) {
 
   localStorage.setItem(highScoreKey, highScoreString);
 
-
-
-
-
-
-
 });
 
 
-
-
-
-
-
+//LS
 localStorage.setItem('highScore', JSON.stringify(highScoresArray))
 const data = JSON.parse(localStorage.getItem('items'))
 
-
-
-
-
-
-
-
-
 function endGame() {
+
   clearInterval(timeInterval);
 
-  
+  //If timer runs out then hide quiz page and open enter initial page
+  var seconds = 120;
+  if (secondsLeft === 0) {
+    enterInitial.style.display = "block"
+    quizPage.style.display = "none";
+  }
+
 
 
 
