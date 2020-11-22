@@ -29,11 +29,25 @@ function renderLastInitials(){
   }
 
 
+}
 
+
+
+
+
+function clearLocalStorage(){
+
+  localStorage.removeItem("highScoreKey");
 
 
 
 }
+
+  
+
+
+
+
 
 
 
@@ -66,7 +80,7 @@ function renderLastInitials(){
 
   
   console.log(showScoresArray);
-  console.log(HighScoreDisplayArr);
+  //console.log(HighScoreDisplayArr);
 
 
 

@@ -155,12 +155,11 @@ h6 {
     border: white;
 }
 
-#scorelist{
-
-    display:flex;
+#scorelist {
+    display: flex;
     justify-content: center;
-    padding-top:20px;
-    
-    
-
+    padding-top: 20px;
+    padding-bottom:20px;
+    color:purple;
+    font-weight:bold;
 }
