@@ -1,7 +1,7 @@
 var scorePageScore = document.getElementById("getfinalscore");
 var scorePageInitials = document.getElementById("getinitials");
 
-var HighScoreDisplayArr = [];
+
 var showScoresArray = [];
 var highScoreKey = "highScoreKey";
 
@@ -21,6 +21,11 @@ function renderLastInitials(){
   var showScores = JSON.parse(localStorage.getItem(highScoreKey));
 
   console.log(showScores);
+    
+  showScores = showScores.sort(function(a,b){
+    return parseInt(b.score)-parseInt(a.score)
+  })
+
 
   for (i=0; i < showScores.length;i++){
     var list = document.createElement("li");

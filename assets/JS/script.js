@@ -143,16 +143,17 @@ function nextQuestion() {
 
   if (questionIndex >= questions.length) {
     quizPage.classList.add('hide');
-    displayScore.textContent = score;
+    displayScore.textContent = secondsLeft;
 
     enterInitial.style.display = "block";
     localStorage.setItem("score", score);
+    endGame();
     return;
   }
 
   questionDisplay.textContent = (questions[questionIndex].ques);
   console.log(questionDisplay);
-  scoreEl.textContent = score;
+
 
   for (var i = 0; i < 4; i++) {
     let answer = questions[questionIndex].answrArray[i];
@@ -175,7 +176,7 @@ answersList.addEventListener("click", function (event) {
     let button = event.target;
     let selectedAnswer = button.textContent;
     if (selectedAnswer === questions[questionIndex - 1].answer) {
-      score++;
+      
 
       console.log(score);
 
@@ -209,7 +210,7 @@ submitInitials.addEventListener("click", function (e) {
   initials = document.getElementById("initials").value;
   console.log("initialshere");
   console.log(initials);
-  highScoresArray.push({ score, initials });
+  highScoresArray.push({ score:secondsLeft, initials:initials });
   console.log(highScoresArray);
   highScoreString = JSON.stringify(highScoresArray);
 
@@ -219,7 +220,7 @@ submitInitials.addEventListener("click", function (e) {
 
 
 //LS
-localStorage.setItem('highScore', JSON.stringify(highScoresArray))
+//
 const data = JSON.parse(localStorage.getItem('items'))
 
 function endGame() {
